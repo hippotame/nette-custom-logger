@@ -1,0 +1,14 @@
+parameters:
+    logger:
+        params:
+            debug: false
+            del_log: true
+            use_messanger: 'mail'
+            recipients: 
+                - hippo@localhost
+            mailfrom: noreply@app.cz
+            subject: null
+services:
+    tracy.logger:
+        class: Tracy\ILogger
+        factory: Hippotame\Logger\Logger("%appDir%/../log","%logger.params%")
