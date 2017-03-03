@@ -34,3 +34,8 @@ services:
     - Hippotame\Logger\Logger("%appDir%/../log","%logger.params%")
 
 ```
+V app/bootstrap.php
+```sh
+\Tracy\Debugger::enable(true);
+  \Tracy\Debugger::setLogger($container->getByType(Tracy\ILogger::class));
+```
